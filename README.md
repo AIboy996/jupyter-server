@@ -211,3 +211,34 @@ git config --global user.email yourmail@xxx.com
 ```
 
 然后就可以快乐使用云端的jupyter notebook了~
+
+## 7、安装Rstudio server
+
+先安装R
+
+然后安装Rstudio server
+
+https://www.rstudio.com/products/rstudio/download-server/redhat-centos/
+
+使用
+
+## 8、安装codeserver
+
+安装参考
+
+https://augists.top/SELF/SHARING/STUDY/Code-Server-on-ECS/
+
+配置文件：
+
+/etc/systemd/system/code-server.service
+
+
+
+运行
+
+```bash
+nohup code-server --allow-root > codeserver.log 2>&1 &
+```
+
+
+
