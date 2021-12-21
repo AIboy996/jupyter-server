@@ -8,9 +8,7 @@
 
 [jupyter server](http:/47.100.52.214:8888)是我本人使用`阿里云ECS`(Elastic Compute Service)搭建的一个远程`jupyter notebook`程序，仅供个人使用。
 
-- 如何搭建一个远程jupyter notebook应用程序？
-
-如下：
+# 一、搭建jupyter server
 
 ## 1、购买阿里云的ECS云服务器
 官网是[阿里云](https://www.aliyun.com/),系统我选择了CentOS 8.4，配置则是乞丐版，一个月￥9。
@@ -212,7 +210,7 @@ git config --global user.email yourmail@xxx.com
 
 然后就可以快乐使用云端的jupyter notebook了~
 
-## 7、安装Rstudio server
+# 二、安装Rstudio server
 
 先安装R
 
@@ -222,23 +220,51 @@ https://www.rstudio.com/products/rstudio/download-server/redhat-centos/
 
 使用
 
-## 8、安装codeserver
+# 三、安装codeserver
 
 安装参考
 
 https://augists.top/SELF/SHARING/STUDY/Code-Server-on-ECS/
 
-配置文件：
+服务配置文件：
 
-/etc/systemd/system/code-server.service
+```bash
+vi /etc/systemd/system/code-server.service
+```
 
+修改设置：
 
+```bash
+vi  ~/.config/code-server/config.yaml
+```
 
-运行
+后台运行：
 
 ```bash
 nohup code-server --allow-root > codeserver.log 2>&1 &
 ```
 
 
+
+# 四、安装vue开发环境
+
+使用conda创建nodejs虚拟环境
+
+```bash
+conda create -n node nodejs
+```
+
+# 五、使用docker搭建镜像
+
+使用一键安装命令
+
+```bash
+curl -sSL https://get.daocloud.io/docker | sh
+```
+
+启动服务
+
+```bash
+systemctl start docker
+```
 
